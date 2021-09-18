@@ -1,4 +1,4 @@
-package com.BO.NoneShop;
+package com.BO.noneShop;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import com.DTO.noneShop.*;
+import com.DTO.noneShop.LoginVO;
 
 public class LoginDAO {
 
