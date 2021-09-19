@@ -1,4 +1,4 @@
-package com.BO.NoneShop;
+package com.BO.noneShop;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package com.BO.NoneShop;
+package com.BO.noneShop;
 
 import java.util.Collections;
 
@@ -22,7 +22,7 @@ public class SwaggerConfig {
 	public Docket apiDocket() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.BO.NoneShop"))
+				.apis(RequestHandlerSelectors.basePackage("com.BO.noneShop"))
 				.paths(PathSelectors.any())
 				.build()
 				.apiInfo(getApiInfo())
