@@ -12,7 +12,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="login.js"></script><!-- Incorporo al proyecto javascript -->
 </head>
 <body>
-<h1>CRECDENCIASLES DE INGRESO A LA TIENDA VIRTUAL</h1>
+<h1>CREDENCIALES DE INGRESO A LA TIENDA VIRTUAL</h1>
 <form>
 <table>
 <tr>

@@ -1,4 +1,4 @@
-package com.BO.noneShop;
+package com.BO.NoneShop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
