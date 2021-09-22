@@ -21,7 +21,7 @@ public class tiendaController {
 		LoginDAO Dao=new LoginDAO();
 		miusuario=Dao.consultarUsuario(usuario,clave);
 		if(miusuario.isEmpty()) {
-			return Collections.singletonMap("existe", false);
+			return Collections.singletonMap("no existe", false);
 		}
 		else {
 			return Collections.singletonMap("existe", true); 

@@ -9,7 +9,7 @@ public class Conexion {
 
 	static String bd = "tiendap";
 	static String login = "root";
-	static String password="root";
+	static String password="1234";
 	static String url = "jdbc:mysql://localhost/"+bd;
 
 	Connection connection = null;

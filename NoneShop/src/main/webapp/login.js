@@ -4,7 +4,6 @@
 
 $(document).ready(function(){
  $("#btn_Enviaru").click(function(){//El evento
-
  let elUsuario = document.getElementById("usuario").value;//cada control de la pagina tiene un Id
  let laClave = document.getElementById("clave").value;
  //esta varialbe contine el valor del campo cedula
