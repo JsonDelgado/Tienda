@@ -4,6 +4,7 @@ public class UsuarioVO {
 private long id_usuario;
 private String usuario;
 private String clave;
+
 public long getId_usuario() {
 	return id_usuario;
 }
