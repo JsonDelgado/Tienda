@@ -20,7 +20,7 @@ $("#agregarC").click(function(){
                 if(status=="success"){
                     let longitud = data.length;
                     let salida ="<table border='1'>";
-                    salida = salida + "<tr><th>ID</th><th>CLIENTE</th><th>CLAVE</th></tr>";
+                    salida = salida + "<tr><th>Cedula</th><th>Direccion</th><th>Email</th><th>Nombre</><th>Telefono</></tr>";
                     for(let i=0;i<longitud;i++){
                         salida = salida + "<tr>";
                         salida = salida + "<td>"+data[i].cedulaCliente+"</td>";
