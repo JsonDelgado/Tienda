@@ -15,4 +15,26 @@ $("#agregarC").click(function(){
                 } });    
 });
 
+ $("#listarC").click(function(){
+            $.get("http://localhost:8080/listarCliente",function(data, status){
+                if(status=="success"){
+                    let longitud = data.length;
+                    let salida ="<table border='1'>";
+                    salida = salida + "<tr><th>ID</th><th>CLIENTE</th><th>CLAVE</th></tr>";
+                    for(let i=0;i<longitud;i++){
+                        salida = salida + "<tr>";
+                        salida = salida + "<td>"+data[i].cedulaCliente+"</td>";
+                        salida = salida + "<td>"+data[i].direccionClient+"</td>";
+                        salida = salida + "<td>"+data[i].emailClient+"</td>";
+						salida = salida + "<td>"+data[i].nombreClient+"</td>";
+						salida = salida + "<td>"+data[i].telefonoClient+"</td>";
+                        salida = salida + "</tr>";
+                    }
+                    salida = salida +"</table>";
+                    $("#mensaje").html(salida);
+                    //Revisar***
+                }
+            });
+        });
+
 });

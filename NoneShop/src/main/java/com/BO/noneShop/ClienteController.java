@@ -1,10 +1,14 @@
 package com.BO.noneShop;
 
+import java.util.ArrayList;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.DAO.noneShop.ClienteDAO;
+import com.DAO.noneShop.UsuarioDAO;
 import com.DTO.noneShop.ClienteVO;
+import com.DTO.noneShop.UsuarioVO;
 
 
 
@@ -24,4 +28,12 @@ public class ClienteController {
 		client.setTelefonoClient(telefonoClient);
 		return dao.crearCliente(client);
 	}
+	
+	@RequestMapping("/listarCliente")
+	public ArrayList<ClienteVO> listaDeUsuarios() {
+		ClienteDAO dao = new ClienteDAO();
+		return dao.listadeClientes();
+	}
 }
+
+

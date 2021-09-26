@@ -66,10 +66,11 @@ public class ClienteDAO {
 			while(res.next()) {
 				ClienteVO client = new ClienteVO();
 				client.setCedulaCliente(res.getInt("cedulaCliente"));
-				
-				Usuario.setUsuario(res.getString("usuario"));
-				Usuario.setClave(res.getString("clave"));
-				misUsuarios.add(Usuario);
+				client.setDireccionClient(res.getString("direccionClient"));
+				client.setEmailClient(res.getString("emailClient"));
+				client.setNombreClient(res.getString("nombreClient"));
+				client.setTelefonoClient(res.getString("telefonoClient"));
+				misClientes.add(client);
 			}
 			res.close();
 			consulta.close();
@@ -77,6 +78,6 @@ public class ClienteDAO {
 		}catch(Exception e) {
 			System.out.println("unable to connectt");
 		}
-		return misUsuarios;
+		return misClientes;
 	}
 }
