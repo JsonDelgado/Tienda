@@ -36,8 +36,8 @@ $("#agregarC").click(function(){
                 }
             });
         });
- $("#BorrarC").click(function(){
-           //let cedulaCliente = $("#cedulaCliente").val();
+ $("#borrarC").click(function(){
+           let cedulaCliente = $("#cedulaCliente").val();
             $.post("http://localhost:8080/borrarCliente",{cedulaCliente: cedulaCliente},function(data, status){//Revisar***
                 if (data==true){
                     $("#mensaje").html(" El cliente fue eliminado .");
