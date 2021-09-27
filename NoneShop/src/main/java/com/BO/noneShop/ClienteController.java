@@ -34,6 +34,16 @@ public class ClienteController {
 		ClienteDAO dao = new ClienteDAO();
 		return dao.listadeClientes();
 	}
+	
+	@RequestMapping("/borrarCliente")
+	public boolean borrarCliente(String cedulaCliente) {
+		ClienteDAO dao = new ClienteDAO();
+		return dao.borrarCliente(Integer.parseInt(cedulaCliente));
+	}
+	
+	
+	
+	
 }
 
 

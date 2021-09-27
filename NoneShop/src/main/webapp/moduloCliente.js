@@ -36,5 +36,15 @@ $("#agregarC").click(function(){
                 }
             });
         });
+ $("#BorrarC").click(function(){
+           //let cedulaCliente = $("#cedulaCliente").val();
+            $.post("http://localhost:8080/borrarCliente",{cedulaCliente: cedulaCliente},function(data, status){//Revisar***
+                if (data==true){
+                    $("#mensaje").html(" El cliente fue eliminado .");
+                }else{
+                    $("#mensaje").html("<b style='color:red;'>No se pudo eliminar, NO existe !!!</b>");
+                } }); 
+		});
+
 
 });

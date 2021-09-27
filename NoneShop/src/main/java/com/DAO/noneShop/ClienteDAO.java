@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.DTO.noneShop.ClienteVO;
-import com.DTO.noneShop.UsuarioVO;
+
 
 
 
@@ -80,4 +80,25 @@ public class ClienteDAO {
 		}
 		return misClientes;
 	}
+	
+	public boolean borrarCliente(int cedulaCliente) {
+		boolean swCrear = false;
+		if(existeCliente(cedulaCliente)) {
+			Conexion conex = new Conexion();
+			try {
+				Statement consulta = (Statement) conex.getConnection().createStatement();
+				String SQL = "DELETE FROM cliente where cedulaCliente="+cedulaCliente;
+				consulta.executeUpdate(SQL);
+				consulta.close();
+				conex.desconectar();
+				swCrear= true;
+			}catch(SQLException e) {
+				System.out.println("No fue posible eliminar");
+			}
+		}else {
+			System.out.println("El usuario no existe");
+		}
+		return swCrear;
+		}
+	
 }
