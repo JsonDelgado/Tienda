@@ -128,7 +128,7 @@ public class UsuarioDAO {
 				try {
 					Statement consulta = (Statement) conex.getConnection().createStatement();
 					String SQL = "UPDATE usuarios set usuario='"+Usuario.getUsuario()+"',"+
-					"clave='"+Usuario.getClave()+"where id_usuario="+Usuario.getId_usuario();
+					"clave='"+Usuario.getClave()+"'where id_usuario="+Usuario.getId_usuario();
 					((java.sql.Statement) consulta).executeUpdate(SQL);
 					((java.sql.Statement) consulta).close();
 					conex.desconectar();

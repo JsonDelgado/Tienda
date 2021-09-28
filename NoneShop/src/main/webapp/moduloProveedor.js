@@ -48,5 +48,20 @@ $("#agregarP").click(function(){
                     $("#mensaje").html("<b style='color:red;'>No se pudo eliminar, NO existe !</b>");
                 } }); 
 		});
+		
+$("#actualizarP").click(function(){
+            let nit = $("#nit").val();
+            let nombrePro = $("#nombrePro").val();
+            let direccionPro = $("#direccionPro").val();
+            let telefonoPro = $("#telefonoPro").val();
+            let ciudadPro = $("#ciudadPro").val();
+            $.post("http://localhost:8080/actualizarProveedor",{nit: nit, nombrePro: nombrePro, direccionPro: direccionPro, telefonoPro: telefonoPro, ciudadPro: ciudadPro},function(data,status){
+                if (data==true){
+                    $("#mensaje").html(" El usuario fue actualizado .");
+                }else{
+                    $("#mensaje").html("<b style='color:red;'>No se pudo actualizar, NO existe !!!</b>");
+                }
+            });            
+        });
 
 });

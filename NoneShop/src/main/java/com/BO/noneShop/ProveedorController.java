@@ -40,5 +40,17 @@ public class ProveedorController {
 		return dao.borrarProveedor(Integer.parseInt(nit));
 	}
 	
+	@RequestMapping("/actualizarProveedor")
+	public boolean actualizarProveedor(String nit, String nombrePro, String direccionPro, String telefonoPro, String ciudadPro) {
+		ProveedorDAO dao = new ProveedorDAO();
+		ProveedorVO proveedor = new ProveedorVO();
+		proveedor.setNit(Integer.parseInt(nit));
+		proveedor.setNombre_pro(nombrePro);
+		proveedor.setDireccion_pro(direccionPro);
+		proveedor.setTelefono_pro(telefonoPro);
+		proveedor.setCiudad_pro(ciudadPro);		
+		return dao.actualizarProveedor(proveedor);
+	}
+	
 
 }

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.DTO.noneShop.ClienteVO;
 import com.DTO.noneShop.ProveedorVO;
+import com.DTO.noneShop.UsuarioVO;
 
 public class ProveedorDAO {
 	
@@ -96,4 +97,28 @@ public class ProveedorDAO {
 		}
 		return swCrear;
 		}
+	
+	public boolean actualizarProveedor(ProveedorVO proveedor) {
+		boolean swActualizar = false;
+		if(existeProveedor(proveedor.getNit())) {
+			Conexion conex = new Conexion();
+			try {
+				Statement consulta = (Statement) conex.getConnection().createStatement();
+				String SQL = "UPDATE proveedores set nombre_pro='"+proveedor.getNombre_pro()+"',"+
+				"direccion_pro='"+proveedor.getDireccion_pro()+"',"+ "telefono_pro='"+proveedor.getTelefono_pro()+"',"+"ciudad_pro='"+proveedor.getCiudad_pro()+ "'where NIT="+proveedor.getNit();
+				((java.sql.Statement) consulta).executeUpdate(SQL);
+				System.out.println(SQL);
+				((java.sql.Statement) consulta).close();
+				conex.desconectar();
+				swActualizar = true;
+			} catch (Exception e) {
+				System.out.println(e);
+				System.out.println("No se pudo actualizar");
+				// TODO: handle exception
+			}
+		}else {
+			System.out.println("No existe el usuario");
+		}
+		return swActualizar;
+	}
 }
