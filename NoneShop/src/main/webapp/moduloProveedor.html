@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>CRUD proveedor</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="moduloProveedor.js"></script>
+
+</head>
+<body>
+
+
+<h1>Proveedores</h1>
+	<div style="border: 1px solid black; width: 50%;">
+		<form>
+			<table>
+				<tr>
+					<td><label>NIT:</label></td>
+					<td>
+						<!--revisar****--> <input id="nit" type="text" value="">
+					</td>
+
+
+				</tr>
+				<tr>
+					<td><label>nombre:</label></td>
+					<td><input id="nombrePro" type="text" value=""></td>
+					<!--html->JS obtiene los valores-->
+				</tr>
+				<tr>
+					<td><label>Direccion:</label></td>
+					<td><input id="direccionPro" type="text" value=""></td>
+				</tr>
+				<tr>
+					<td><label>Telefono:</label></td>
+					<td><input id="telefonoPro" type="text" value=""></td>
+				</tr>
+				<tr>
+					<td><label>Ciudad:</label></td>
+					<td><input id="ciudadPro" type="text" value=""></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Agregar" id="agregarP"></td>
+					<td><input type="button" value="Listar" id="listarP"></td>
+					<td><input type="button" value="Borrar" id="borrarP"></td>
+					
+				</tr>
+			</table>
+		</form>
+	</div>
+	<!--Info JSON-->
+	<div id="mensaje"></div>
+
+
+</body>
+</html>
