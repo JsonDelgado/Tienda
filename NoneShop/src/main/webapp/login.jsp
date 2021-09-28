@@ -17,11 +17,11 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <h1>Bienvenidos a la tienda noneShop!</h1>
 <div class="login">
 
-<form>
+<form method="get" action=./login2.html>
 
 <input Id="usuario" type="text" value="" placeholder="Usuario">
 <input Id="clave" type="text" value="" placeholder="contraseña">
-<input type="button" value="Enviar" id="btn_Enviaru">
+<input type="submit" value="Enviar" id="btn_Enviaru">
 
 <!-- <tr><td><button id="btnEnviar" class="w3-
 button">Enviar</button></td></tr>-->
