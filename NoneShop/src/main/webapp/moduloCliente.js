@@ -9,9 +9,9 @@ $("#agregarC").click(function(){
 
             $.post("http://localhost:8080/crearCliente",{cedulaCliente: cedulaCliente, direccionClient: direccionClient, emailClient: emailClient, nombreClient: nombreClient, telefonoClient: telefonoClient},function(data,status){
                 if (data==true){
-                    $("#mensaje").html(" El usuario fue creado .");
+                    alert(" El usuario fue creado.");
                 }else{
-                    $("#mensaje").html("<b style='color:red;'>No se pudo crear, ya existe !!!</b>");
+                    alert("No fue posible crear el usuario");
                 } });    
 });
 
@@ -20,19 +20,19 @@ $("#agregarC").click(function(){
                 if(status=="success"){
                     let longitud = data.length;
                     let salida ="<table border='1'>";
-                    salida = salida + "<tr><th>Cedula</th><th>Direccion</th><th>Email</th><th>Nombre</><th>Telefono</></tr>";
+                    salida = salida + "<tr><th align=left>Cedula</th><th align=left>Direccion</th><th align=left>Email</th><th align=left>Nombre</><th align=left>Telefono</></tr>";
                     for(let i=0;i<longitud;i++){
                         salida = salida + "<tr>";
-                        salida = salida + "<td>"+data[i].cedulaCliente+"</td>";
-                        salida = salida + "<td>"+data[i].direccionClient+"</td>";
-                        salida = salida + "<td>"+data[i].emailClient+"</td>";
-						salida = salida + "<td>"+data[i].nombreClient+"</td>";
-						salida = salida + "<td>"+data[i].telefonoClient+"</td>";
+                        salida = salida + "<td align=left>"+data[i].cedulaCliente+"</td>";
+                        salida = salida + "<td align=left>"+data[i].direccionClient+"</td>";
+                        salida = salida + "<td align=left>"+data[i].emailClient+"</td>";
+						salida = salida + "<td align=left>"+data[i].nombreClient+"</td>";
+						salida = salida + "<td align=left>"+data[i].telefonoClient+"</td>";
                         salida = salida + "</tr>";
                     }
                     salida = salida +"</table>";
-                    $("#mensaje").html(salida);
-                    //Revisar***
+					document.getElementById("tablaC").innerHTML = salida;
+                    
                 }
             });
         });
@@ -40,9 +40,9 @@ $("#agregarC").click(function(){
            let cedulaCliente = $("#cedulaCliente").val();
             $.post("http://localhost:8080/borrarCliente",{cedulaCliente: cedulaCliente},function(data, status){//Revisar***
                 if (data==true){
-                    $("#mensaje").html(" El cliente fue eliminado .");
+                   alert(" El cliente fue eliminado.");
                 }else{
-                    $("#mensaje").html("<b style='color:red;'>No se pudo eliminar, NO existe !!!</b>");
+                    alert("No fue posible eliminar, contacte administrador");
                 } }); 
 		});
 		
@@ -54,9 +54,9 @@ $("#actualizarC").click(function(){
             let telefonoClient = $("#telefonoClient").val();
             $.post("http://localhost:8080/actualizarCliente",{cedulaCliente: cedulaCliente, direccionClient: direccionClient, emailClient: emailClient, nombreClient: nombreClient, telefonoClient: telefonoClient},function(data,status){
                 if (data==true){
-                    $("#mensaje").html(" El usuario fue actualizado .");
+                    alert("El usuario fue actualizado.");
                 }else{
-                    $("#mensaje").html("<b style='color:red;'>No se pudo actualizar, NO existe !!!</b>");
+                    alert("No fue posible actualizar, contacte administrador");
                 }
             });            
         });

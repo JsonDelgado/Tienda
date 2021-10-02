@@ -2,12 +2,19 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>CRUD USUARIOS</title>
+<title>Modulo inicial</title>
+<link rel="stylesheet" href="./css/estilosModuloI.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script src="login2.js"></script>
+<script src="moduloCliente.js"></script>
+<script src="moduloProveedor.js"></script>
 </head>
 <body>
+<<<<<<< Updated upstream
 	<h1>Usuarios</h1>
 	<div style="border: 1px solid black; width: 50%;">
 		<form>
@@ -37,7 +44,175 @@
 					<td><input type="button" value="Listar" id="listarU"></td>
 				</tr>
 			</table>
+=======
+
+	<div class="wrap">
+		<ul class="tabs">
+			<li><a href="#tab1"><span class="fas fa-user"></span><span class="tab-text">Usuarios</span>
+			</a></li>
+			<li><a href="#tab2"><span class="fas fa-address-book"></span ><span class="tab-text">Clientes</span>
+			</a></li>
+			<li><a href="#tab3"><span class="fas fa-building"></span><span class="tab-text">Proveedores</span>
+			</a></li>
+			<li><a href="#tab4"><span class="fas fa-dollar-sign"></span><span class="tab-text">Ventas</span>
+			</a></li>
+			<li><a href="#tab5"><span class="fas fa-book"></span><span class="tab-text">Reportes</span>
+			</a></li>
+		</ul>
+
+		<div class="seccions">
+			<article id="tab1">
+
+			
+					<form class="form">
+						
+								<h2 class="form_title">Usuarios</h2>
+								
+	
+						<div class = "form_conta"> 
+							<div class="form_group">
+							
+								<input  id="id" type="text" class ="form_input" placeholder=" " value="">
+								<label for="name" class = "form_label">ID:</label>															
+								<span class="form_line"></span>
+						</div>
+											
+							<div class = "form_group">
+								
+								<input  id="usuario" type="text" class ="form_input" placeholder=" " value="">
+								<label  for="name" class = "form_label">Usuario:</label>
+								<span class="form_line"></span>
+							
+							</div>
+							<div class = "form_group">
+								
+								<input type="password" id="clave" class = "form_input" placeholder=" " value="">
+								<label for="name" class = "form_label">Clave:</label>
+								<span class="form_line"></span>
+							
+							
+							</div>																					
+							
+						</div>
+						
+								<input type ="button" class="form_submit" value="Agregar" id = "agregarU">
+								<input type ="button" class="form_submit" value="Actualizar" id = "actualizarU">
+								<input type ="button" class="form_submit" value="Listar" id = "listarU">									
+								<input type ="button" class="form_submit" value="Eliminar" id = "eliminarU">							
+																			
+					</form>
+					
+								<table id="tabla" class="form_table"></table>
+								
+				
+			</article>
+			
+			
+			<article id="tab2">
+				
+		<form class="form">
+			<h2 class="form_title">Clientes</h2>
+							<div class = "form_conta"> 
+							
+							
+							<div class="form_group">
+								<input  id="cedulaCliente" type="text" class ="form_input" placeholder=" " value="">
+								<label for="name" class = "form_label">ID:</label>															
+								<span class="form_line"></span>							
+							
+							</div>
+							
+							<div class="form_group">
+								<input  id="direccionClient" type="text" class ="form_input" placeholder=" " value="">
+								<label for="name" class = "form_label">Direccion</label>															
+								<span class="form_line"></span>							
+							
+							</div>							
+
+							<div class="form_group">
+								<input  id="emailClient" type="text" class ="form_input" placeholder=" " value="">
+								<label for="name" class = "form_label">Email</label>															
+								<span class="form_line"></span>							
+							
+							</div>		
+							
+							<div class="form_group">
+								<input  id="nombreClient" type="text" class ="form_input" placeholder=" " value="">
+								<label for="name" class = "form_label">Nombre</label>															
+								<span class="form_line"></span>							
+							
+							</div>		
+							
+							<div class="form_group">
+								<input  id="telefonoClient" type="text" class ="form_input" placeholder=" " value="">
+								<label for="name" class = "form_label">Telefono</label>															
+								<span class="form_line"></span>							
+							
+							</div>														
+												
+							</div>
+
+								<input type ="reset" class="form_submit" value="Agregar" id = "agregarC">
+								<input type ="reset" class="form_submit" value="Actualizar" id = "actualizarC">
+								<input type ="reset" class="form_submit" value="Listar" id = "listarC">								
+								<input type ="reset" class="form_submit" value="Eliminar" id = "borrarC">
+
+>>>>>>> Stashed changes
 		</form>
+								<table id="tablaC" class="form_table"></table>
+			</article>
+			
+			
+			
+			<article id="tab3">
+
+				<form class="form">
+					<h2 class="form_title">Proveedores</h2>
+						<div class = "form_conta"> 
+							
+							<div class="form_group">
+								<input  id="nit" type="text" class ="form_input" placeholder=" " value="">
+								<label for="name" class = "form_label">NIT</label>															
+								<span class="form_line"></span>	
+							</div>
+							
+							<div class="form_group">
+								<input  id="nombrePro" type="text" class ="form_input" placeholder=" " value="">
+								<label for="name" class = "form_label">Nombre</label>															
+								<span class="form_line"></span>	
+							</div>							
+							
+							<div class="form_group">
+								<input  id="direccionPro" type="text" class ="form_input" placeholder=" " value="">
+								<label for="name" class = "form_label">Direccion</label>															
+								<span class="form_line"></span>	
+							</div>								
+							
+							<div class="form_group">
+								<input  id="telefonoPro" type="text" class ="form_input" placeholder=" " value="">
+								<label for="name" class = "form_label">Telefono</label>															
+								<span class="form_line"></span>	
+							</div>								
+							
+								<div class="form_group">
+								<input  id="ciudadPro" type="text" class ="form_input" placeholder=" " value="">
+								<label for="name" class = "form_label">Ciudad</label>															
+								<span class="form_line"></span>	
+							</div>
+						</div>
+
+							<input type ="reset" class="form_submit" value="Agregar" id = "agregarP">
+							<input type ="reset" class="form_submit" value="Actualizar" id = "actualizarP">
+							<input type ="reset" class="form_submit" value="Listar" id = "listarP">
+							<input type ="reset" class="form_submit" value="Eliminar" id = "borrarP">
+
+
+				</form>
+				
+							<table id="tablaP" class="form_table"></table>
+			</article>
+		</div>
+
 	</div>
 	<!--Info JSON-->
 	<div id="mensaje"></div>
