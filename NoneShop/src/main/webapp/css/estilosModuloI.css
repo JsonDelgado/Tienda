@@ -16,7 +16,7 @@ body{
 
 .wrap{
 	background-color: #fff;
-	width: 900px;	
+	width: 1000px;	
 	max-width: 90%;
 	margin:200px auto;
 }
@@ -54,6 +54,7 @@ ul.tabs li a .tab-text{
 
 .seccions{
 	margin-top:-6em;
+	
 	width: 100%;
 
 	
@@ -74,8 +75,10 @@ ul.tabs li a .tab-text{
 	margin: auto;
 	width: 100%;
 	max-width: 500px;
-	padding:1.5em 3em;
+	padding: 3.5em 1em;
+	border-radius: 10 px;
 	box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);	
+	
 }	
 	
 .form_title{
@@ -86,6 +89,7 @@ ul.tabs li a .tab-text{
 	
 .form_conta{
 	margin-top:4em;
+	margin-right:1em;
 	display:grid;
 	gap: 2.5em;
 }
@@ -164,14 +168,29 @@ ul.tabs li a .tab-text{
 }
 
 .form_table{
-	max-width: 500px;
-	box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
-	padding:0.5em 3em;
-	margin: 50px auto;
-	border: none;
-	border-radius: .5em;
-	
-	width: 100%;
-	
+	text-align: justify;
+	box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);	
+	margin:30px auto;	
+	width:480px;
+	padding:30px;
+	border-collapse: collapse;
 }
 
+.form_table th, td{
+	padding: 10px;
+}
+
+.form_table th, thead{
+	background-color: #3866f2;
+	border-bottom: solid 5px #363636;
+	color: white;
+}
+.form_table tr:nth-child(even){
+	background-color: #ddd;
+}
+
+.form_table tr:hover td{
+	background-color: #3866f2;
+	color:white;
+
+}
