@@ -16,7 +16,7 @@ public class ProveedorDAO {
 		boolean existe = false;
 		Conexion conex = new Conexion ();
 		try {
-			PreparedStatement consulta = conex.getConnection().prepareStatement("Select * from proveedores where NIT=?");
+			PreparedStatement consulta = conex.getConnection().prepareStatement("Select * from proveedores where nitproveedor=?");
 			
 			consulta.setLong(1, nit);
 			ResultSet res = consulta.executeQuery();
@@ -34,12 +34,12 @@ public class ProveedorDAO {
 
 	public boolean crearProveedor(ProveedorVO proveedor) {
 		boolean swCrear = false;
-		if(!existeProveedor(proveedor.getNit())) {
+		if(!existeProveedor(proveedor.getNitproveedor())) {
 			Conexion conex = new Conexion();
 			try {
 				Statement consulta = (Statement) conex.getConnection().createStatement();
-				String SQL = "INSERT INTO proveedores (NIT, nombre_pro, direccion_pro, telefono_pro, ciudad_pro) VALUES ("+
-						proveedor.getNit()+",'"+proveedor.getNombre_pro()+"','"+proveedor.getDireccion_pro()+"','"+proveedor.getTelefono_pro()+"','"+proveedor.getCiudad_pro()+"');";
+				String SQL = "INSERT INTO proveedores (nitproveedor, nombre_proveedor, direccion_proveedor, telefono_proveedor, ciudad_proveedor) VALUES ("+
+						proveedor.getNitproveedor()+",'"+proveedor.getNombre_proveedor()+"','"+proveedor.getDireccion_proveedor()+"','"+proveedor.getTelefono_proveedor()+"','"+proveedor.getCiudad_proveedor()+"');";
 				((java.sql.Statement) consulta).executeUpdate(SQL);
 				((java.sql.Statement) consulta).close();
 				conex.desconectar();
@@ -62,11 +62,11 @@ public class ProveedorDAO {
 			ResultSet res = consulta.executeQuery();
 			while(res.next()) {
 				ProveedorVO pro = new ProveedorVO();
-				pro.setNit(res.getInt("NIT"));
-				pro.setNombre_pro(res.getString("nombre_pro"));
-				pro.setDireccion_pro(res.getString("direccion_pro"));
-				pro.setTelefono_pro(res.getString("telefono_pro"));
-				pro.setCiudad_pro(res.getString("ciudad_pro"));
+				pro.setNitproveedor(res.getInt("nitproveedor"));
+				pro.setNombre_proveedor(res.getString("nombre_proveedor"));
+				pro.setDireccion_proveedor(res.getString("direccion_proveedor"));
+				pro.setTelefono_proveedor(res.getString("telefono_proveedor"));
+				pro.setCiudad_proveedor(res.getString("ciudad_proveedor"));
 				misPros.add(pro);
 			}
 			res.close();
@@ -84,7 +84,7 @@ public class ProveedorDAO {
 			Conexion conex = new Conexion();
 			try {
 				Statement consulta = (Statement) conex.getConnection().createStatement();
-				String SQL = "DELETE FROM proveedores where NIT="+nit;
+				String SQL = "DELETE FROM proveedores where nitproveedor="+nit;
 				consulta.executeUpdate(SQL);
 				consulta.close();
 				conex.desconectar();
@@ -100,12 +100,13 @@ public class ProveedorDAO {
 	
 	public boolean actualizarProveedor(ProveedorVO proveedor) {
 		boolean swActualizar = false;
-		if(existeProveedor(proveedor.getNit())) {
+		
+		if(existeProveedor(proveedor.getNitproveedor())) {
 			Conexion conex = new Conexion();
 			try {
 				Statement consulta = (Statement) conex.getConnection().createStatement();
-				String SQL = "UPDATE proveedores set nombre_pro='"+proveedor.getNombre_pro()+"',"+
-				"direccion_pro='"+proveedor.getDireccion_pro()+"',"+ "telefono_pro='"+proveedor.getTelefono_pro()+"',"+"ciudad_pro='"+proveedor.getCiudad_pro()+ "'where NIT="+proveedor.getNit();
+				String SQL = "UPDATE proveedores set nombre_proveedor='"+proveedor.getNombre_proveedor()+"',"+
+				"direccion_proveedor='"+proveedor.getDireccion_proveedor()+"',"+ "telefono_proveedor='"+proveedor.getTelefono_proveedor()+"',"+"ciudad_proveedor='"+proveedor.getCiudad_proveedor()+ "'where nitproveedor="+proveedor.getNitproveedor();
 				((java.sql.Statement) consulta).executeUpdate(SQL);
 				System.out.println(SQL);
 				((java.sql.Statement) consulta).close();

@@ -32,10 +32,47 @@ $("#agregarC").click(function(){
                     }
                     salida = salida +"</table>";
 					document.getElementById("tablaC").innerHTML = salida;
+					document.getElementById("tablaGC").innerHTML = salida;
                     
                 }
             });
         });
+
+ $("#listarVentasC").click(function(){
+            $.get("http://localhost:8080/listarClienteV",function(data, status){
+                if(status=="success"){
+                                      
+                    salida = data.cedulaCliente;
+					document.getElementById("txtClienteV").innerHTML = salida;
+                    
+                }
+            });
+        });
+
+
+
+ $("#listarRC").click(function(){
+            $.get("http://localhost:8080/listarCliente",function(data, status){
+                if(status=="success"){
+                    let longitud = data.length;
+                    let salida ="<table border='1'>";
+                    salida = salida + "<tr><th align=left>Cedula</th><th align=left>Direccion</th><th align=left>Email</th><th align=left>Nombre</><th align=left>Telefono</></tr>";
+                    for(let i=0;i<longitud;i++){
+                        salida = salida + "<tr>";
+                        salida = salida + "<td align=left>"+data[i].cedulaCliente+"</td>";
+                        salida = salida + "<td align=left>"+data[i].direccionClient+"</td>";
+                        salida = salida + "<td align=left>"+data[i].emailClient+"</td>";
+						salida = salida + "<td align=left>"+data[i].nombreClient+"</td>";
+						salida = salida + "<td align=left>"+data[i].telefonoClient+"</td>";
+                        salida = salida + "</tr>";
+                    }
+                    salida = salida +"</table>";
+					document.getElementById("tablaRC").innerHTML = salida;
+                    
+                }
+            });
+        });
+
  $("#borrarC").click(function(){
            let cedulaCliente = $("#cedulaCliente").val();
             $.post("http://localhost:8080/borrarCliente",{cedulaCliente: cedulaCliente},function(data, status){//Revisar***

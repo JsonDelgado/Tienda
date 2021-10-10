@@ -25,11 +25,11 @@ $("#agregarP").click(function(){
                     salida = salida + "<tr><th  align=left>NIT</th><th  align=left>Nombre</th><th  align=left>Direccion</th><th  align=left>Telefono</><th  align=left>Ciudad</></tr>";
                     for(let i=0;i<longitud;i++){
                         salida = salida + "<tr>";
-                        salida = salida + "<td  align=left>"+data[i].nit+"</td>";
-                        salida = salida + "<td  align=left>"+data[i].nombre_pro+"</td>";
-                        salida = salida + "<td  align=left>"+data[i].direccion_pro+"</td>";
-						salida = salida + "<td  align=left>"+data[i].telefono_pro+"</td>";
-						salida = salida + "<td  align=left>"+data[i].ciudad_pro+"</td>";
+                        salida = salida + "<td  align=left>"+data[i].nitproveedor+"</td>";
+                        salida = salida + "<td  align=left>"+data[i].nombre_proveedor+"</td>";
+                        salida = salida + "<td  align=left>"+data[i].direccion_proveedor+"</td>";
+						salida = salida + "<td  align=left>"+data[i].telefono_proveedor+"</td>";
+						salida = salida + "<td  align=left>"+data[i].ciudad_proveedor+"</td>";
                         salida = salida + "</tr>";
                     }
                     salida = salida +"</table>";

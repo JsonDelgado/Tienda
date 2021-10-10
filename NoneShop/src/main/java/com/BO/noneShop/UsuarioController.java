@@ -43,14 +43,18 @@ public class UsuarioController {
 	 * @return
 	 */
 	@RequestMapping("/crearusuario")
-	public boolean crearUsuario(String id_usuario, String usuario, String clave) {
+	public boolean crearUsuario(String cedulaUsuario, String nombreUsuario, String emailUsuario, String usuarios, String password) {
 		UsuarioDAO dao = new UsuarioDAO();
 		UsuarioVO Usuario = new UsuarioVO();
-//Revisar*****
-		Usuario.setId_usuario(Long.parseLong(id_usuario));
-		Usuario.setUsuario(usuario);
-		Usuario.setClave(clave);
+		
+		Usuario.setCedula_usuario(Integer.parseInt(cedulaUsuario));
+		Usuario.setNombre_usuario(nombreUsuario);
+		Usuario.setEmail_usuario(emailUsuario);
+		Usuario.setUsuarios(usuarios);
+		Usuario.setPassword(password);
+		
 		return dao.crearUsuario(Usuario);
+		
 	}
 
 	/**
@@ -60,9 +64,9 @@ public class UsuarioController {
 	 * @return
 	 */
 	@RequestMapping("/borrarusuario")
-	public boolean borrarUsuario(String id_usuario) {
+	public boolean borrarUsuario(String cedulaUsuario) {
 		UsuarioDAO dao = new UsuarioDAO();
-		return dao.borrarUsuario(Long.parseLong(id_usuario));
+		return dao.borrarUsuario(Long.parseLong(cedulaUsuario));
 	}
 
 	/**
@@ -74,12 +78,14 @@ public class UsuarioController {
 	 * @return
 	 */
 	@RequestMapping("/actualizarusuario")
-	public boolean actualizarUsuario(String id_usuario, String usuario, String clave) {
+	public boolean actualizarUsuario(String cedulaUsuario, String nombreUsuario, String emailUsuario, String usuarios, String password) {
 		UsuarioDAO dao = new UsuarioDAO();
 		UsuarioVO Usuario = new UsuarioVO();
-		Usuario.setId_usuario(Long.parseLong(id_usuario));
-		Usuario.setUsuario(usuario);
-		Usuario.setClave(clave);
+		Usuario.setCedula_usuario(Integer.parseInt(cedulaUsuario));
+		Usuario.setNombre_usuario(nombreUsuario);
+		Usuario.setEmail_usuario(emailUsuario);
+		Usuario.setUsuarios(usuarios);
+		Usuario.setPassword(password);
 		return dao.actualizarUsuario(Usuario);
 	}
 }

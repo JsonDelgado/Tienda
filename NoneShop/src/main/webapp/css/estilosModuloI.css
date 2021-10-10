@@ -6,19 +6,33 @@
 }
 
 body{
-	background-color: #ededf9;
+	background-color: #e5e5f7;
+	
 	background-size: 16px 16px;
-	background-image:  repeating-linear-gradient(0deg, #000000, #000000 0.8px, #ededf9 0.8px, #ededf9);
+	background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #b0b1d055, #b0b1d0 );
 	display: flex;
-	min-height: 100vh;
+	min-height: 50vh;
 	font-family: 'Roboto', sans-serif;
 }
+
+
+
+.form{
+	background-color: #fff;
+	margin: auto;
+	width: 100%;
+	max-width: 500px;
+	padding: 3.5em 1em;
+	border-radius: 10 px;
+	box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);	
+	
+}	
 
 .wrap{
 	background-color: #fff;
 	width: 1000px;	
-	max-width: 90%;
-	margin:200px auto;
+	max-width: 200%;
+	margin:100px auto;
 }
 
 ul.tabs{
@@ -53,8 +67,7 @@ ul.tabs li a .tab-text{
 }
 
 .seccions{
-	margin-top:-6em;
-	
+	margin-top:-6em;	
 	width: 100%;
 
 	
@@ -68,18 +81,25 @@ ul.tabs li a .tab-text{
 	text-align: justify;
 	}
 
+
+
+.formV{
 	
-	
-.form{
 	background-color: #fff;
-	margin: auto;
-	width: 100%;
-	max-width: 500px;
-	padding: 3.5em 1em;
+	margin-left: -100px;
+	width: 800px;
+	max-width: 1500px;
+	padding: 1.5em 1em;
 	border-radius: 10 px;
 	box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);	
 	
-}	
+}
+
+.labelDatos{
+	margin-top: 50px;
+}
+
+
 	
 .form_title{
 	font-size:2rem;
@@ -110,6 +130,47 @@ ul.tabs li a .tab-text{
 	border-bottom: 1px solid var(--color);
 	font-family: 'Roboto', sans-serif;
 }
+
+.form_inputV{
+	width: 15%;
+	font-size: 1rem;
+	padding: 6.em .3em;
+	font-family: 'Roboto', sans-serif;
+	margin-top: 5px;
+	margin-left: 50px;
+}
+
+.labelProducto{	
+	margin-top: 40px;
+	margin-bottom: 15px;
+	margin-left: 50px;
+	
+}
+
+.labelP{
+	margin-left: 133px;
+}
+
+.labelcP{
+	margin-left: 20px;
+}
+
+.labelvT{
+	margin-left: 30px;
+}
+
+.form_cantP{
+	width: 6%;
+	margin-left: 35px;
+}
+
+.valor{
+	width: 100%;
+	margin-left: -115.5px;
+	text-align: right;
+}
+
+
 
 
 .form_input:not(:placeholder-shown){
@@ -147,6 +208,21 @@ ul.tabs li a .tab-text{
 	padding: .30em 0;
 	border: none;
 	border-radius: .5em;
+}
+
+.form_submitT{
+	margin-top:2em;
+	margin-right: 20.5px;
+	background: #3866f2;
+	color: #fff;	
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 1rem;
+	padding: .30em 0;
+	border: none;
+	border-radius: .5em;
+	
 }
 
 .form_line{

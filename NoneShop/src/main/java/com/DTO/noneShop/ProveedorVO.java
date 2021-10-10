@@ -2,43 +2,44 @@ package com.DTO.noneShop;
 
 public class ProveedorVO {
 
-	private int nit;
-	private String nombre_pro;
-	private String direccion_pro;
-	private String telefono_pro;
-	private String ciudad_pro;
+	private int nitproveedor;
+	private String nombre_proveedor;
+	private String direccion_proveedor;
+	private String telefono_proveedor;
+	private String ciudad_proveedor;
+	public int getNitproveedor() {
+		return nitproveedor;
+	}
+	public void setNitproveedor(int nitproveedor) {
+		this.nitproveedor = nitproveedor;
+	}
+	public String getNombre_proveedor() {
+		return nombre_proveedor;
+	}
+	public void setNombre_proveedor(String nombre_proveedor) {
+		this.nombre_proveedor = nombre_proveedor;
+	}
+	public String getDireccion_proveedor() {
+		return direccion_proveedor;
+	}
+	public void setDireccion_proveedor(String direccion_proveedor) {
+		this.direccion_proveedor = direccion_proveedor;
+	}
+	public String getTelefono_proveedor() {
+		return telefono_proveedor;
+	}
+	public void setTelefono_proveedor(String telefono_proveedor) {
+		this.telefono_proveedor = telefono_proveedor;
+	}
+	public String getCiudad_proveedor() {
+		return ciudad_proveedor;
+	}
+	public void setCiudad_proveedor(String ciudad_proveedor) {
+		this.ciudad_proveedor = ciudad_proveedor;
+	}
 	
 	
-	public int getNit() {
-		return nit;
-	}
-	public void setNit(int nit) {
-		this.nit = nit;
-	}
-	public String getNombre_pro() {
-		return nombre_pro;
-	}
-	public void setNombre_pro(String nombre_pro) {
-		this.nombre_pro = nombre_pro;
-	}
-	public String getDireccion_pro() {
-		return direccion_pro;
-	}
-	public void setDireccion_pro(String direccion_pro) {
-		this.direccion_pro = direccion_pro;
-	}
-	public String getTelefono_pro() {
-		return telefono_pro;
-	}
-	public void setTelefono_pro(String telefono_pro) {
-		this.telefono_pro = telefono_pro;
-	}
-	public String getCiudad_pro() {
-		return ciudad_pro;
-	}
-	public void setCiudad_pro(String ciudad_pro) {
-		this.ciudad_pro = ciudad_pro;
-	}
+	
 	
 	
 	

@@ -20,11 +20,11 @@ public class ProveedorController {
 		ProveedorDAO dao = new ProveedorDAO();
 		ProveedorVO pro = new ProveedorVO();
 //Revisar*****
-		pro.setNit(Integer.parseInt(nit));
-		pro.setNombre_pro(nombrePro);
-		pro.setDireccion_pro(direccionPro);
-		pro.setTelefono_pro(telefonoPro);
-		pro.setCiudad_pro(ciudadPro);
+		pro.setNitproveedor(Integer.parseInt(nit));
+		pro.setNombre_proveedor(nombrePro);
+		pro.setDireccion_proveedor(direccionPro);
+		pro.setTelefono_proveedor(telefonoPro);
+		pro.setCiudad_proveedor(ciudadPro);
 		return dao.crearProveedor(pro);
 	}
 	
@@ -44,11 +44,11 @@ public class ProveedorController {
 	public boolean actualizarProveedor(String nit, String nombrePro, String direccionPro, String telefonoPro, String ciudadPro) {
 		ProveedorDAO dao = new ProveedorDAO();
 		ProveedorVO proveedor = new ProveedorVO();
-		proveedor.setNit(Integer.parseInt(nit));
-		proveedor.setNombre_pro(nombrePro);
-		proveedor.setDireccion_pro(direccionPro);
-		proveedor.setTelefono_pro(telefonoPro);
-		proveedor.setCiudad_pro(ciudadPro);		
+		proveedor.setNitproveedor(Integer.parseInt(nit));
+		proveedor.setNombre_proveedor(nombrePro);
+		proveedor.setDireccion_proveedor(direccionPro);
+		proveedor.setTelefono_proveedor(telefonoPro);
+		proveedor.setCiudad_proveedor(ciudadPro);		
 		return dao.actualizarProveedor(proveedor);
 	}
 	

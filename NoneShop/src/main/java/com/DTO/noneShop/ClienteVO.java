@@ -12,6 +12,14 @@ public class ClienteVO {
 
 
 
+	public ClienteVO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public ClienteVO(String nombreClient) {
+		super();
+		this.nombreClient = nombreClient;
+	}
 	public int getCedulaCliente() {
 		return cedulaCliente;
 	}

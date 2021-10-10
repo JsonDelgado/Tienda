@@ -23,9 +23,12 @@ $('ul.tabs li a').click(function(){
 
 $('ul.tabs li a').click(function(){
 
- 	document.getElementById("id").value="";
-	document.getElementById("usuario").value="";
-	document.getElementById("clave").value="";
+ 	document.getElementById("cedulaUsuario").value="";
+	document.getElementById("nombreUsuario").value="";
+	document.getElementById("emailUsuario").value="";
+	document.getElementById("usuarios").value="";
+	document.getElementById("password").value="";
+
 	
 	document.getElementById("cedulaCliente").value="";
 	document.getElementById("direccionClient").value="";
@@ -43,11 +46,16 @@ $('ul.tabs li a').click(function(){
 	document.getElementById("tabla").innerHTML = "";
 	document.getElementById("tablaC").innerHTML = "";
 	document.getElementById("tablaP").innerHTML = "";
+	document.getElementById("tablaRU").innerHTML = "";
+	document.getElementById("tablaRC").innerHTML = "";
+	
 });
 
+$('.form_submitT').click(function(){
+	document.getElementById("tablaRU").innerHTML = "";
+	document.getElementById("tablaRC").innerHTML = "";
 
-
-
+});
 
 
  $("#listarU").click(function(){
@@ -56,18 +64,50 @@ $('ul.tabs li a').click(function(){
                 if(status=="success"){
                     let longitud = data.length;
                     let salida ="<table border='1'>";
-                    salida = salida + "<tr><th align=left>ID</th><th align=left>USUARIO</th><th align=left>CLAVE</th></tr>";
+                    salida = salida + "<tr><th align=left>Cedula</th><th align=left>Nombre</th>  <th align=left>Email</th> <th align=left>Usuario</th>  <th align=left>Contrasena</th></tr>";
 
                     for(let i=0;i<longitud;i++){
                         salida = salida + "<tr>";
 						
-                        salida = salida + "<td align=left>"+data[i].id_usuario+"</td>";
-                        salida = salida + "<td align=left>"+data[i].usuario+"</td>";
-                        salida = salida + "<td align=left>"+data[i].clave+"</td>";
+                        salida = salida + "<td align=left>"+data[i].cedula_usuario+"</td>";
+                        salida = salida + "<td align=left>"+data[i].nombre_usuario+"</td>";
+                        salida = salida + "<td align=left>"+data[i].email_usuario+"</td>";
+						salida = salida + "<td align=left>"+data[i].usuarios+"</td>";
+						salida = salida + "<td align=left>"+data[i].password+"</td>";
                         salida = salida + "</tr>";
                     }
                     salida = salida +"</table>";
 					document.getElementById("tabla").innerHTML = salida;
+				
+					
+                    
+                    //Revisar***
+                }
+            });
+        });
+
+ $("#listarRU").click(function(){
+	
+            $.get("http://localhost:8080/listausuarios",function(data, status){
+                if(status=="success"){
+                    let longitud = data.length;
+                    let salida ="<table border='1'>";
+                    salida = salida + "<tr><th align=left>Cedula</th><th align=left>Nombre</th>  <th align=left>Email</th> <th align=left>Usuario</th>  <th align=left>Contrasena</th></tr>";
+
+                    for(let i=0;i<longitud;i++){
+                        salida = salida + "<tr>";
+						
+                        salida = salida + "<td align=left>"+data[i].cedula_usuario+"</td>";
+                        salida = salida + "<td align=left>"+data[i].nombre_usuario+"</td>";
+                        salida = salida + "<td align=left>"+data[i].email_usuario+"</td>";
+						salida = salida + "<td align=left>"+data[i].usuarios+"</td>";
+						salida = salida + "<td align=left>"+data[i].password+"</td>";
+                        salida = salida + "</tr>";
+                    }
+                    salida = salida +"</table>";
+					document.getElementById("tablaRU").innerHTML = salida;
+					
+				
 					
                     
                     //Revisar***
@@ -77,13 +117,16 @@ $('ul.tabs li a').click(function(){
 
 
 
+
 $("#agregarU").click(function(){
-	
-            let elid = $("#id").val();
-            let elusuario = $("#usuario").val();
-            let laclave = $("#clave").val();
+            let cedulaUsuario = $("#cedulaUsuario").val();
+            let nombreUsuario = $("#nombreUsuario").val();
+            let emailUsuario = $("#emailUsuario").val();
+			let usuarios = $("#usuarios").val();
+			let password = $("#password").val();
            
-            $.post("http://localhost:8080/crearusuario",{id_usuario: elid, usuario: elusuario, clave: laclave},function(data,status){
+            $.post("http://localhost:8080/crearusuario",{cedulaUsuario: cedulaUsuario, nombreUsuario: nombreUsuario, emailUsuario: emailUsuario, usuarios: usuarios, password: password},function(data,status){
+					alert(cedulaUsuario);
                 if (data==true){
                     alert("Usuario creado");
 													
@@ -96,10 +139,12 @@ $("#agregarU").click(function(){
 });
 
 $("#actualizarU").click(function(){
-            let elid = $("#id").val();
-            let elusuario = $("#usuario").val();
-            let laclave = $("#clave").val();
-            $.post("http://localhost:8080/actualizarusuario",{id_usuario: elid, usuario: elusuario, clave: laclave},function(data,status){
+            let cedulaUsuario = $("#cedulaUsuario").val();
+            let nombreUsuario = $("#nombreUsuario").val();
+            let emailUsuario = $("#emailUsuario").val();
+			let usuarios = $("#usuarios").val();
+			let password = $("#password").val();
+            $.post("http://localhost:8080/actualizarusuario",{cedulaUsuario: cedulaUsuario, nombreUsuario: nombreUsuario, emailUsuario: emailUsuario, usuarios: usuarios, clave: password},function(data,status){
                 if (data==true){
                     alert(" El usuario fue actualizado .");
                 }else{
@@ -108,13 +153,16 @@ $("#actualizarU").click(function(){
             });            
         });
 
-        $("#eliminarU").click(function(){
-            let elid = $("#id").val();
-            $.post("http://localhost:8080/borrarusuario",{id_usuario: elid},function(data,status){//Revisar***
+     $("#eliminarU").click(function(){
+            let elid = $("#cedulaUsuario").val();
+            $.post("http://localhost:8080/borrarusuario",{cedulaUsuario: elid},function(data,status){//Revisar***
                 if (data==true){
                     alert(" El usuario fue eliminado.");
                 }else{
                     alert("No se pudo eliminar");
                 } }); 
 		});
+		
+		
+		
  });

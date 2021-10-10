@@ -21,7 +21,7 @@ public class ClienteDAO {
 		try {
 			PreparedStatement consulta = conex.getConnection().prepareStatement("Select * from cliente where cedulaCliente=?");
 			
-			consulta.setLong(1, cedulaCliente);
+			consulta.setInt(1, cedulaCliente);
 			ResultSet res = consulta.executeQuery();
 			if (res.next()) {
 				existe = true;
@@ -43,6 +43,7 @@ public class ClienteDAO {
 				Statement consulta = (Statement) conex.getConnection().createStatement();
 				String SQL = "INSERT INTO cliente (cedulaCliente, direccionClient, emailClient, nombreClient, telefonoClient) VALUES ("+
 				cliente.getCedulaCliente()+",'"+cliente.getDireccionClient()+"','"+cliente.getEmailClient()+"','"+cliente.getNombreClient()+"','"+cliente.getTelefonoClient()+"');";
+				
 				((java.sql.Statement) consulta).executeUpdate(SQL);
 				((java.sql.Statement) consulta).close();
 				conex.desconectar();
@@ -82,6 +83,26 @@ public class ClienteDAO {
 		return misClientes;
 	}
 	
+	public String nombreCliente(){
+		String cliente = "";
+		Conexion conex = new Conexion();
+		try {
+			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM cliente");
+			ResultSet res = consulta.executeQuery();		
+				ClienteVO client = new ClienteVO(cliente);
+				client.setNombreClient(res.getString("nombreClient"));
+				cliente = client.getNombreClient();
+			
+			res.close();
+			consulta.close();
+			conex.desconectar();
+		}catch(Exception e) {
+			System.out.println("unable to connectt");
+		}
+		return cliente;
+	}
+	
+	
 	public boolean borrarCliente(int cedulaCliente) {
 		boolean swCrear = false;
 		if(existeCliente(cedulaCliente)) {
@@ -102,22 +123,20 @@ public class ClienteDAO {
 		return swCrear;
 		}
 	
-	public boolean actualizarCliente(ProveedorVO proveedor) {
+	public boolean actualizarCliente(ClienteVO cliente) {
 		boolean swActualizar = false;
-		if(existeCliente(proveedor.getNit())) {
+		if(existeCliente(cliente.getCedulaCliente())) {
 			Conexion conex = new Conexion();
 			try {
 				Statement consulta = (Statement) conex.getConnection().createStatement();
-				String SQL = "UPDATE proveedores set nombre_pro='"+proveedor.getNombre_pro()+"',"+
-				"direccion_pro='"+proveedor.getDireccion_pro()+"',"+ "telefono_pro='"+proveedor.getTelefono_pro()+"',"+"ciudad_pro='"+proveedor.getCiudad_pro()+ "'where NIT="+proveedor.getNit();
+				String SQL = "UPDATE cliente set nombreClient='"+cliente.getNombreClient()+"',"+
+				"direccionClient='"+cliente.getDireccionClient()+"',"+"emailClient='"+cliente.getEmailClient() +"',"+"telefonoClient='"+cliente.getTelefonoClient() +"'where cedulaCliente="+cliente.getCedulaCliente();
 				((java.sql.Statement) consulta).executeUpdate(SQL);
-				System.out.println(SQL);
 				((java.sql.Statement) consulta).close();
 				conex.desconectar();
 				swActualizar = true;
 			} catch (Exception e) {
-				System.out.println(e);
-				System.out.println("No se pudo actualizar");
+				System.out.println("No se pudo actualizar"+e);
 				// TODO: handle exception
 			}
 		}else {
