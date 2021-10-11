@@ -24,7 +24,7 @@ import com.sun.java.util.jar.pack.Package.File;
 @RestController
 public class ClienteController {
 
-	@RequestMapping("/cargarArchivoCSV")
+	/*@RequestMapping("/cargarArchivoCSV")
 		public String cargarArchivo(MultipartFile archivoCSV) {
 			File archiveNew;
 			String salida="";
@@ -50,7 +50,7 @@ public class ClienteController {
 			}
 		}
 	
-	
+	**/
 	public boolean existeCliente(long cedulaCliente) {
 		boolean existe = false;
 		Conexion conex = new Conexion ();
