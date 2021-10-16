@@ -1,18 +1,18 @@
 package com.DTO.noneShop;
 
 public class productoVO {
-		private int código_producto;
+		private int codigo_producto;
 		private String nombre_producto;
 		private int nitproveedor;
 		private double precio_compra;
 		private double ivacompra;
 		private double precio_venta;
 		
-		public int getCódigo_producto() {
-			return código_producto;	
+		public int getCodigo_producto() {
+			return codigo_producto;	
 		}
-		public void setCódigo_producto(int código_producto) {
-			this.código_producto = código_producto;
+		public void setCodigo_producto(int código_producto) {
+			this.codigo_producto = código_producto;
 		}
 		public String getNombre_producto() {
 			return nombre_producto;

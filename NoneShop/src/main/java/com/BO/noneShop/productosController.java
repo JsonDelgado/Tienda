@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.DAO.noneShop.productoDAO;
 import com.DTO.noneShop.productoVO;
 
+@RestController
+@CrossOrigin(origins= {"http://localhost:8080","http://54.144.74.49"})
 public class productosController {
 
 	@RequestMapping("/cargarArchivo")
@@ -33,13 +36,13 @@ public class productosController {
 			linea= archivo.readLine();
 				if (linea!=null) {
 						String tmpLinea= linea.replace("\"'","'");
-						ArrayList<String> miLista=new ArrayList<String>(Arrays.asList(tmpLinea.split(",")));
+						ArrayList<String> miLista=new ArrayList<String>(Arrays.asList(tmpLinea.split(";")));
 						
 						productoVO productos =new productoVO();
 						//provar datos BD
 						
 						
-						productos.setCódigo_producto(Integer.parseInt(miLista.get(0)));
+						productos.setCodigo_producto(Integer.parseInt(miLista.get(0)));
 						productos.setNombre_producto(miLista.get(1).replace("'",""));
 						productos.setNitproveedor(Integer.parseInt(miLista.get(2).replace("'","")));
 						productos.setPrecio_compra(Double.parseDouble(miLista.get(3).replace("'","")));
@@ -53,10 +56,11 @@ public class productosController {
 		archivo.close();
 		fuente.close();
 		boolean secreo= false;
+		
 		for(productoVO registro:listado) {
 		productoDAO dao = new productoDAO();
 		secreo = dao.crearProducto(registro);
-		salida = salida + "**"+secreo+"**" + registro.getCódigo_producto() + "---" + registro.getNombre_producto() + "---"+
+		salida = salida + "**"+secreo+"**" + registro.getCodigo_producto() + "---" + registro.getNombre_producto() + "---"+
 				registro.getNitproveedor() + "---" +
 				registro.getPrecio_compra() + " ---"+
 				registro.getIvacompra() + " ---"+
@@ -70,6 +74,7 @@ public class productosController {
 				}
 				return salida;
 				}
+	
 				private File deMultiPartAFile(MultipartFile archivo) {
 				File convFile = new File(archivo.getOriginalFilename());
 				FileOutputStream salida;

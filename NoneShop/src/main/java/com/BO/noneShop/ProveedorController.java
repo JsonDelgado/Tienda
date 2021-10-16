@@ -2,6 +2,7 @@ package com.BO.noneShop;
 
 import java.util.ArrayList;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,7 @@ import com.DTO.noneShop.ProveedorVO;
 import com.DTO.noneShop.UsuarioVO;
 
 @RestController
+@CrossOrigin(origins= {"http://localhost:8080","http://54.144.74.49"})
 public class ProveedorController {
 
 	

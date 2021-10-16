@@ -11,13 +11,13 @@ import com.DTO.noneShop.productoVO;
 
 public class productoDAO {
 	
-	public boolean existeProducto(int código_producto) {
+	public boolean existeProducto(int codigo_producto) {
 		boolean existe = false;
 		Conexion conex = new Conexion ();
 		try {
-			PreparedStatement consulta = conex.getConnection().prepareStatement("Select * from productos where código_producto=?");
+			PreparedStatement consulta = conex.getConnection().prepareStatement("Select * from productos where codigo_producto=?");
 			
-			consulta.setLong(1, código_producto);
+			consulta.setInt(1, codigo_producto);
 			ResultSet res = consulta.executeQuery();
 			if (res.next()) {
 				existe = true;
@@ -33,12 +33,12 @@ public class productoDAO {
 
 	public boolean crearProducto(productoVO productos) {
 		boolean swCrear = false;
-		if(!existeProducto(productos.getCódigo_producto())) {
+		if(!existeProducto(productos.getCodigo_producto())) {
 			Conexion conex = new Conexion();
 			try {
-				Statement consulta = (Statement) conex.getConnection().createStatement();
-				String SQL = "INSERT INTO productos (código_producto, nombre_producto, nitproveedor, precio_compra, ivacompra,precio_venta) VALUES ("+
-				productos.getCódigo_producto()+",'"+productos.getNombre_producto()+"','"+productos.getNitproveedor()+"','"+productos.getPrecio_compra()+"','"+productos.getIvacompra()+"','"+productos.getPrecio_venta()+"');";
+				Statement consulta = conex.getConnection().createStatement();
+				String SQL = "INSERT INTO productos (codigo_producto, nombre_producto, nitproveedor, precio_compra, ivacompra,precio_venta) VALUES ("+
+				productos.getCodigo_producto()+",'"+productos.getNombre_producto()+"','"+productos.getNitproveedor()+"','"+productos.getPrecio_compra()+"','"+productos.getIvacompra()+"','"+productos.getPrecio_venta()+"');";
 				((java.sql.Statement) consulta).executeUpdate(SQL);
 				((java.sql.Statement) consulta).close();
 				conex.desconectar();
@@ -62,7 +62,7 @@ public class productoDAO {
 			ResultSet res = consulta.executeQuery();
 			while(res.next()) {
 				productoVO productos = new productoVO();
-				productos.setCódigo_producto(res.getInt("código_producto"));
+				productos.setCodigo_producto(res.getInt("código_producto"));
 				productos.setNombre_producto(res.getString("nombre_producto"));
 				productos.setNitproveedor(res.getInt("nitproveedor"));
 				productos.setPrecio_compra(res.getDouble("precio_compra"));

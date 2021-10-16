@@ -7,16 +7,17 @@ import java.sql.Connection;
 
 public class Conexion {
 
-	static String bd = "tiendap";
-	static String login = "root";
-	static String password="Mintic#2022";
-	static String url = "jdbc:mysql://localhost/"+bd;
+	static String bd = "grupo39_equipo5";
+	static String login = "admin";
+	static String password="tiendagenericamaoe2";
+	//static String url = "jdbc:mysql://localhost/"+bd;
+	static String url = "jdbc:mariadb://tiendagenericamaoe2.czo3ixoe3xoe.us-east-1.rds.amazonaws.com/"+bd;
 
 	Connection connection = null;
 	
 	public Conexion() {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");			
+			Class.forName("org.mariadb.jdbc.Driver");			
 			connection = DriverManager.getConnection(url,login,password);
 			
 			if(connection!=null) {

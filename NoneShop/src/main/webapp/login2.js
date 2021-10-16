@@ -58,6 +58,9 @@ $('.form_submitT').click(function(){
 });
 
 
+
+
+
  $("#listarU").click(function(){
 	
             $.get("http://localhost:8080/listausuarios",function(data, status){

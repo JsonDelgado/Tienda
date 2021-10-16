@@ -5,37 +5,14 @@
 <title>campo</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
-function listar(){
-$.get("http://localhost:8080/listaProductos",function(data, status){
-if(status=="success"){
-let longitud = data.length;
-let salida ="<table border='1'>";
-salida = salida + "<tr><th>código</th><th>nombre_producto</th><th>nitproveedor</th><th>precio_compra</th><th>ivacompra</th><th>precio_venta</th></tr>";
-for(let i=0;i<longitud;i++){
-salida = salida + "<tr>";
-salida = salida + "<td>"+data[i].código_producto+"</td>";
-salida = salida + "<td>"+data[i].nombre_producto+"</td>";
-salida = salida + "<td>"+data[i].nitproveedor+"</td>";
-salida = salida + "<td>"+data[i].precio_compra+"</td>";
-salida = salida + "<td>"+data[i].ivacompra+"</td>";
-salida = salida + "<td>"+data[i].precio_venta+"</td>";
-salida = salida + "</tr>";
-}
-salida = salida +"</table>";
-$("#salida").html(salida);
-}
-});
-}
-});
+
 </script>
 </head>
 <body>
 <body>
 	<hr>
 				<form method="POST" action="./cargarArchivo" enctype="multipart/form-data">
-				<label>Nombre del archivo:</label>
-				<input type="file" class="form-control" name="archivoCSV" accept=".csv">
+				<label>Nombre del archivo:</label><input type="file" name="archivoCSV" accept=".csv">
 				<input type="submit" value="Cargar">
 				</form>
 				<hr>

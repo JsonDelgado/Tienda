@@ -10,6 +10,7 @@ import com.DTO.noneShop.UsuarioVO;
 
 //Autoriza para hacer consultas desde afuera
 @RestController
+@CrossOrigin(origins= {"http://localhost:8080","http://54.144.74.49"})
 public class UsuarioController {
 	/**
 	 * recibe la peticion para el listado de Usuarios
