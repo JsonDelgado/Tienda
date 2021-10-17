@@ -2,11 +2,15 @@ package com.DTO.noneShop;
 
 public class VentasVO {
 
+	
+	private static final long serialVersionUID = 1L;
+	
 	int codigoVenta;
 	int cedulaCliente;
 	int cedulaUsuario;
 	double ivaVenta;
 	double totalVenta;
+	double valorVenta;
 	
 	public int getCodigoVenta() {
 		return codigoVenta;
@@ -37,6 +41,12 @@ public class VentasVO {
 	}
 	public void setTotalVenta(double totalVenta) {
 		this.totalVenta = totalVenta;
+	}
+	public double getValorVenta() {
+		return valorVenta;
+	}
+	public void setValorVenta(double valorVenta) {
+		this.valorVenta = valorVenta;
 	}
 	
 	

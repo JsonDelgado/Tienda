@@ -3,14 +3,11 @@ package com.DAO.noneShop;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.DTO.noneShop.VentasVO;
 import com.DTO.noneShop.detalleVentasVO;
 
+public class detalleVentasDAO {
 
-
-public class ventasDAO {
-
-	public void registrarVenta(VentasVO venta) {
+	public void registrarDetalleVenta(detalleVentasVO detalleventa) {
 		// llama y crea una instancia de la clase encargada de hacer la conexiÃ³n
 		Conexion conex = new Conexion();
 
@@ -19,9 +16,10 @@ public class ventasDAO {
 			Statement estatuto = conex.getConnection().createStatement();
 
 			// String que contiene la sentencia insert a ejecutar
-			String sentencia = "INSERT INTO ventas VALUES(" + venta.getCodigoVenta() + "," + venta.getCedulaCliente()
-					+ "," + venta.getCedulaUsuario() + "," + venta.getIvaVenta() + "," + venta.getTotalVenta() + ","
-					+ venta.getValorVenta() + "" + ");";
+			String sentencia = "INSERT INTO detalle_ventas VALUES(" + detalleventa.getCodigoDetalle() + ","
+					+ detalleventa.getCantidadProducto() + "," + detalleventa.getCodigoProducto() + ","
+					+ detalleventa.getCodigoVenta() + "," + detalleventa.getValorTotal() + ","
+					+ detalleventa.getValorVenta() + "," + detalleventa.getValorIVA() + "" + ");";
 
 			// se ejecuta la sentencia en la base de datos
 			estatuto.executeUpdate(sentencia);
@@ -34,17 +32,19 @@ public class ventasDAO {
 		} catch (SQLException e) {
 			// si hay un error en el sql mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo insertar la venta");
+			System.out.println("No se pudo insertar la detalleventa");
 			System.out.println(e.getMessage());
 			System.out.println(e.getErrorCode());
 		} catch (Exception e) {
 			// si hay cualquier otro error mostrarlo
 			System.out.println("------------------- ERROR --------------");
-			System.out.println("No se pudo insertar la venta");
+			System.out.println("No se pudo insertar la detalleventa");
 			System.out.println(e.getMessage());
 			System.out.println(e.getLocalizedMessage());
 		}
 
 	}
+	
+	
 	
 }

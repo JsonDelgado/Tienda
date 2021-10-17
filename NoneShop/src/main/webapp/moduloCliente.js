@@ -7,7 +7,7 @@ $("#agregarC").click(function(){
             let nombreClient = $("#nombreClient").val();
             let telefonoClient = $("#telefonoClient").val();
 
-            $.post("http://localhost:8080/crearCliente",{cedulaCliente: cedulaCliente, direccionClient: direccionClient, emailClient: emailClient, nombreClient: nombreClient, telefonoClient: telefonoClient},function(data,status){
+            $.post("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/crearCliente",{cedulaCliente: cedulaCliente, direccionClient: direccionClient, emailClient: emailClient, nombreClient: nombreClient, telefonoClient: telefonoClient},function(data,status){
                 if (data==true){
                     alert(" El usuario fue creado.");
                 }else{
@@ -16,7 +16,7 @@ $("#agregarC").click(function(){
 });
 
  $("#listarC").click(function(){
-            $.get("http://localhost:8080/listarCliente",function(data, status){
+            $.get("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/listarCliente",function(data, status){
                 if(status=="success"){
                     let longitud = data.length;
                     let salida ="<table border='1'>";
@@ -39,7 +39,7 @@ $("#agregarC").click(function(){
         });
 
  $("#listarVentasC").click(function(){
-            $.get("http://localhost:8080/listarClienteV",function(data, status){
+            $.get("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/listarClienteV",function(data, status){
                 if(status=="success"){
                                       
                     salida = data.cedulaCliente;
@@ -52,7 +52,7 @@ $("#agregarC").click(function(){
 
 
  $("#listarRC").click(function(){
-            $.get("http://localhost:8080/listarCliente",function(data, status){
+            $.get("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/listarCliente",function(data, status){
                 if(status=="success"){
                     let longitud = data.length;
                     let salida ="<table border='1'>";
@@ -75,7 +75,7 @@ $("#agregarC").click(function(){
 
  $("#borrarC").click(function(){
            let cedulaCliente = $("#cedulaCliente").val();
-            $.post("http://localhost:8080/borrarCliente",{cedulaCliente: cedulaCliente},function(data, status){//Revisar***
+            $.post("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/borrarCliente",{cedulaCliente: cedulaCliente},function(data, status){//Revisar***
                 if (data==true){
                    alert(" El cliente fue eliminado.");
                 }else{
@@ -89,7 +89,7 @@ $("#actualizarC").click(function(){
             let emailClient = $("#emailClient").val();
             let nombreClient = $("#nombreClient").val();
             let telefonoClient = $("#telefonoClient").val();
-            $.post("http://localhost:8080/actualizarCliente",{cedulaCliente: cedulaCliente, direccionClient: direccionClient, emailClient: emailClient, nombreClient: nombreClient, telefonoClient: telefonoClient},function(data,status){
+            $.post("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/actualizarCliente",{cedulaCliente: cedulaCliente, direccionClient: direccionClient, emailClient: emailClient, nombreClient: nombreClient, telefonoClient: telefonoClient},function(data,status){
                 if (data==true){
                     alert("El usuario fue actualizado.");
                 }else{

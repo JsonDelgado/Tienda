@@ -2,6 +2,8 @@ package com.DTO.noneShop;
 
 public class detalleVentasVO {
 
+	private static final long serialVersionUID = -7823811509082856845L;
+	
 	int codigoDetalle;
 	int cantidadProducto;
 	int codigoVenta;

@@ -7,7 +7,7 @@ $("#agregarDV").click(function(){
             let nombreClient = $("#nombreClient").val();
             let telefonoClient = $("#telefonoClient").val();
 
-            $.post("http://localhost:8080/crearCliente",{codigoProducto: codP1, direccionClient: direccionClient, emailClient: emailClient, nombreClient: nombreClient, telefonoClient: telefonoClient},function(data,status){
+            $.post("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/crearCliente",{codigoProducto: codP1, direccionClient: direccionClient, emailClient: emailClient, nombreClient: nombreClient, telefonoClient: telefonoClient},function(data,status){
                 if (data==true){
                     alert(" El usuario fue creado.");
                 }else{

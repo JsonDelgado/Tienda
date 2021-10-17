@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,6 +23,7 @@ import com.DTO.noneShop.UsuarioVO;
 
 
 @RestController
+@CrossOrigin(origins= {"http://localhost:8080","http://54.144.74.49"})
 public class ClienteController {
 
 	/*@RequestMapping("/cargarArchivoCSV")

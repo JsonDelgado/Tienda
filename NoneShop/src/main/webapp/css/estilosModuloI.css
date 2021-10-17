@@ -6,8 +6,7 @@
 }
 
 body{
-	background-color: #e5e5f7;
-	
+	background-color: #e5e5f7;	
 	background-size: 16px 16px;
 	background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #b0b1d055, #b0b1d0 );
 	display: flex;

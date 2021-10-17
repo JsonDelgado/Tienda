@@ -7,7 +7,7 @@ $("#agregarP").click(function(){
             let telefonoPro = $("#telefonoPro").val();
             let ciudadPro = $("#ciudadPro").val();
 
-            $.post("http://localhost:8080/crearProveedor",{nit: nit, nombrePro: nombrePro, direccionPro: direccionPro, telefonoPro: telefonoPro, ciudadPro: ciudadPro},function(data,status){
+            $.post("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/crearProveedor",{nit: nit, nombrePro: nombrePro, direccionPro: direccionPro, telefonoPro: telefonoPro, ciudadPro: ciudadPro},function(data,status){
                 if (data==true){
                     $("#mensaje").html(" El proveedor fue creado .");
                 }else{
@@ -18,7 +18,7 @@ $("#agregarP").click(function(){
 
 
  $("#listarP").click(function(){
-            $.get("http://localhost:8080/listarProveedor",function(data, status){
+            $.get("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/listarProveedor",function(data, status){
                 if(status=="success"){
                     let longitud = data.length;
                     let salida ="<table border='1'>";
@@ -40,7 +40,7 @@ $("#agregarP").click(function(){
 
  $("#borrarP").click(function(){
            let nit = $("#nit").val();
-            $.post("http://localhost:8080/borrarProveedor",{nit: nit},function(data, status){//Revisar***
+            $.post("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/borrarProveedor",{nit: nit},function(data, status){//Revisar***
                 if (data==true){
                     $("#mensaje").html(" El proveedor fue eliminado .");
                 }else{
@@ -54,7 +54,7 @@ $("#actualizarP").click(function(){
             let direccionPro = $("#direccionPro").val();
             let telefonoPro = $("#telefonoPro").val();
             let ciudadPro = $("#ciudadPro").val();
-            $.post("http://localhost:8080/actualizarProveedor",{nit: nit, nombrePro: nombrePro, direccionPro: direccionPro, telefonoPro: telefonoPro, ciudadPro: ciudadPro},function(data,status){
+            $.post("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/actualizarProveedor",{nit: nit, nombrePro: nombrePro, direccionPro: direccionPro, telefonoPro: telefonoPro, ciudadPro: ciudadPro},function(data,status){
                 if (data==true){
                     $("#mensaje").html(" El usuario fue actualizado .");
                 }else{
