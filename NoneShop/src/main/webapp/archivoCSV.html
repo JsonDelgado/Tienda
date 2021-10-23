@@ -11,15 +11,17 @@
 <body>
 <body>
 	<hr>
-				<form method="POST" action="./cargarArchivo" enctype="multipart/form-data">
-				<label>Nombre del archivo:</label><input type="file" name="archivoCSV" accept=".csv">
-				<input type="submit" value="Cargar">
-				</form>
-				<hr>
-				<hr>
-				
-				<div id="salida">
-				</div>
+<form method="POST" action="./cargarArchivo" enctype="multipart/form-data">
+ <label>Seleccione el archivo .csv </label><input type="file" name="archivoCSV"
+accept=".csv">
+ <input type="submit" value="Enviar">
+ </form>
+<hr>
+<hr>
+<button id="btnBuscar">Solicitar Listado</button>
+<div id="salida">
+</div>
 </body>
+
 </html>
 

@@ -118,12 +118,7 @@ $('.form_submitT').click(function(){
             });
         });
 
- $("#cargarArchivo").click(function(){
-	$.post("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/cargarArchivo",function(data, status){
-		
-		
-        });
-});
+
 
 
 $("#agregarU").click(function(){

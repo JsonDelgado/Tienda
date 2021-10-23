@@ -18,7 +18,7 @@ import com.DAO.noneShop.productoDAO;
 import com.DTO.noneShop.productoVO;
 
 @RestController
-@CrossOrigin(origins= {"http://localhost:8080","http://54.144.74.49"})
+@CrossOrigin(origins= {"http://localhost:8080", "*"})
 public class productosController {
 
 	@RequestMapping("/cargarArchivo")

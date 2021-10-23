@@ -6,12 +6,12 @@
 <link rel="stylesheet" href="./css/estilosModuloI.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script src="login2.js"></script>
 <script src="moduloCliente.js"></script>
 <script src="moduloProveedor.js"></script>
+<script src="productos.js"></script>
 </head>
 <body>
 
@@ -284,19 +284,20 @@
 			
 			<article id ="tab6">
 				
-			<form class="form">
-				<form class="form">  <!-- esta clase es el fondo -->
+			
+			
+				<form id="form-importar" >  <!-- esta clase es el fondo -->
 		
 				  
 				<hr>
 				
-				<label>Nombre del archivo:</label><input type="file" name="archivoCSV" accept=".csv">
-				<input type="submit" value="Cargar" id = "cargarArchivo">
-				<input type ="button" value="Listado de Clientes" id = "cargarArchivo">		
+				<label>Nombre del archivo:</label><input type="file" name="archivoCSV" onchange="setFile(this)" accept=".csv">
+				<input type="button" value="Cargar" id = "cargarArchivo" onclick="eventclickbutton()">	
 				</form>
+							
 				<hr>
 				<hr>
-			</form>
+			
 			
 				
 			</article>
