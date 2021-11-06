@@ -4,20 +4,20 @@
 
 $(document).ready(function(){
  $("#btn_Enviaru").click(function(){//El evento
- let elUsuario = document.getElementById("usuario").value;//cada control de la pagina tiene un Id
+ let elUsuario = document.getElementById("usuario").value;
  let laClave = document.getElementById("clave").value;
  //esta varialbe contine el valor del campo cedula
-$.post("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/loginusuario2",{usuario: elUsuario, clave: laClave },
+$.post("http://localhost:8080/loginusuario2",{usuario: elUsuario, clave: laClave },
 function(data, status){
 // data1 = $.parseJSON( data );
 if(data.existe==true)
 {
 alert("Bienvenido "+elUsuario);
-
+window.location.href ="./login2.html";
 }
 else
 {
-alert("No xiste el Usuario");
+alert("Comprobar usuario y contraseña");
 }
  });
  });

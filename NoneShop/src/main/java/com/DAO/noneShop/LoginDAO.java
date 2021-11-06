@@ -14,7 +14,7 @@ public class LoginDAO {
 		ArrayList<LoginVO> miuser = new ArrayList<LoginVO>();
 		Conexion conex = new Conexion();
 		try {
-			String cadenaSQL = "SELECT * FROM usuarios where usuario =? and clave=?";
+			String cadenaSQL = "SELECT * FROM usuarios where usuarios =? and password=?";
 			PreparedStatement consulta = conex.getConnection().prepareStatement(cadenaSQL);
 			
 			consulta.setString(1, usuario);
@@ -23,8 +23,8 @@ public class LoginDAO {
 			
 			if(res.next()) {
 				LoginVO usuario1 = new LoginVO();
-				usuario1.setUsuario(res.getString("usuario"));
-				usuario1.setClave(res.getString("clave"));
+				usuario1.setUsuario(res.getString("usuarios"));
+				usuario1.setClave(res.getString("password"));
 				miuser.add(usuario1);
 						
 			}

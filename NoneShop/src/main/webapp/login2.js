@@ -63,7 +63,7 @@ $('.form_submitT').click(function(){
 
  $("#listarU").click(function(){
 	http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT
-            $.get("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/listausuarios",function(data, status){
+            $.get("http://localhost:8080/listausuarios",function(data, status){
                 if(status=="success"){
                     let longitud = data.length;
                     let salida ="<table border='1'>";
@@ -91,7 +91,7 @@ $('.form_submitT').click(function(){
 
  $("#listarRU").click(function(){
 	
-            $.get("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/listausuarios",function(data, status){
+            $.get("http://localhost:8080/listausuarios",function(data, status){
                 if(status=="success"){
                     let longitud = data.length;
                     let salida ="<table border='1'>";
@@ -128,7 +128,7 @@ $("#agregarU").click(function(){
 			let usuarios = $("#usuarios").val();
 			let password = $("#password").val();
            
-            $.post("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/crearusuario",{cedulaUsuario: cedulaUsuario, nombreUsuario: nombreUsuario, emailUsuario: emailUsuario, usuarios: usuarios, password: password},function(data,status){
+            $.post("http://localhost:8080/crearusuario",{cedulaUsuario: cedulaUsuario, nombreUsuario: nombreUsuario, emailUsuario: emailUsuario, usuarios: usuarios, password: password},function(data,status){
 					alert(cedulaUsuario);
                 if (data==true){
                     alert("Usuario creado");
@@ -147,7 +147,7 @@ $("#actualizarU").click(function(){
             let emailUsuario = $("#emailUsuario").val();
 			let usuarios = $("#usuarios").val();
 			let password = $("#password").val();
-            $.post("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/actualizarusuario",{cedulaUsuario: cedulaUsuario, nombreUsuario: nombreUsuario, emailUsuario: emailUsuario, usuarios: usuarios, clave: password},function(data,status){
+            $.post("http://localhost:8080/actualizarusuario",{cedulaUsuario: cedulaUsuario, nombreUsuario: nombreUsuario, emailUsuario: emailUsuario, usuarios: usuarios, clave: password},function(data,status){
                 if (data==true){
                     alert(" El usuario fue actualizado .");
                 }else{
@@ -158,7 +158,7 @@ $("#actualizarU").click(function(){
 
      $("#eliminarU").click(function(){
             let elid = $("#cedulaUsuario").val();
-            $.post("http://54.144.74.49:8080/NoneShop-0.0.1-SNAPSHOT/borrarusuario",{cedulaUsuario: elid},function(data,status){//Revisar***
+            $.post("http://localhost:8080/borrarusuario",{cedulaUsuario: elid},function(data,status){//Revisar***
                 if (data==true){
                     alert(" El usuario fue eliminado.");
                 }else{

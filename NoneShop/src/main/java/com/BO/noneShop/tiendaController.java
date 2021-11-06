@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.DAO.noneShop.LoginDAO;
 import com.DTO.noneShop.LoginVO;
 @RestController
-@CrossOrigin(origins= {"http://localhost:8080","http://54.144.74.49"})
 public class tiendaController {
 
 	

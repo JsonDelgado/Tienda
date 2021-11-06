@@ -3,7 +3,7 @@ function setFile(obj) { file_upload = obj
 console.log(obj)};
 
 function eventclickbutton(){
-	alert("entro al subimt");
+	alert("Productos cargados correctamente");
 	
 	var fd = new FormData();
         if (file_upload != null) {
