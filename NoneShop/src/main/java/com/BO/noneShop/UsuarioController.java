@@ -43,7 +43,7 @@ public class UsuarioController {
 	 * @return
 	 */
 	@RequestMapping("/crearusuario")
-	public boolean crearUsuario(String cedulaUsuario, String nombreUsuario, String emailUsuario, String usuarios, String password) {
+	public boolean crearUsuario(String cedulaUsuario, String nombreUsuario, String emailUsuario, String usuarios, String password, int id_ciudad) {
 		UsuarioDAO dao = new UsuarioDAO();
 		UsuarioVO Usuario = new UsuarioVO();
 		
@@ -52,6 +52,7 @@ public class UsuarioController {
 		Usuario.setEmail_usuario(emailUsuario);
 		Usuario.setUsuarios(usuarios);
 		Usuario.setPassword(password);
+		Usuario.setId_ciudad(id_ciudad);
 		
 		return dao.crearUsuario(Usuario);
 		

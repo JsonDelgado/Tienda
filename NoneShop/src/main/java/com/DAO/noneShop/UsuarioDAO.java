@@ -22,6 +22,7 @@ public class UsuarioDAO {
 				Usuario.setEmail_usuario(res.getString("email_usuario"));
 				Usuario.setUsuarios(res.getString("usuarios"));
 				Usuario.setPassword(res.getString("password"));	
+				Usuario.setId_ciudad(Integer.parseInt(res.getString("id_ciudad")));			
 				misUsuarios.add(Usuario);
 			}
 			res.close();
@@ -49,7 +50,8 @@ public class UsuarioDAO {
 					Usuario.setNombre_usuario(res.getString("nombre_usuario"));
 					Usuario.setEmail_usuario(res.getString("email_usuario"));
 					Usuario.setUsuarios(res.getString("usuarios"));
-					Usuario.setPassword(res.getString("password"));					
+					Usuario.setPassword(res.getString("password"));	
+					Usuario.setId_ciudad(Integer.parseInt(res.getString("id_ciudad")));
 					misUsuarios.add(Usuario);
 					
 				}
@@ -90,7 +92,8 @@ public class UsuarioDAO {
 				try {
 					Statement consulta = (Statement) conex.getConnection().createStatement();
 					String SQL = "INSERT INTO usuarios (cedula_usuario, nombre_usuario, email_usuario, usuarios, password) VALUES ("+
-					Usuario.getCedula_usuario()+",'"+Usuario.getNombre_usuario()+"','"+Usuario.getEmail_usuario()+"','"+Usuario.getUsuarios()+"','"+Usuario.getPassword()+"');";
+					Usuario.getCedula_usuario()+",'"+Usuario.getNombre_usuario()+"','"+Usuario.getEmail_usuario()+"','"+Usuario.getUsuarios()+"','"+Usuario.getPassword()+"','"+Usuario.getId_ciudad                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ()+"');";
+					
 					((java.sql.Statement) consulta).executeUpdate(SQL);
 					((java.sql.Statement) consulta).close();
 					conex.desconectar();

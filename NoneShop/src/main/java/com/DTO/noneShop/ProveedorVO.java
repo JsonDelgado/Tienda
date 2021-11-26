@@ -7,6 +7,7 @@ public class ProveedorVO {
 	private String direccion_proveedor;
 	private String telefono_proveedor;
 	private String ciudad_proveedor;
+	private int id_ciudad;
 	public int getNitproveedor() {
 		return nitproveedor;
 	}
@@ -36,6 +37,12 @@ public class ProveedorVO {
 	}
 	public void setCiudad_proveedor(String ciudad_proveedor) {
 		this.ciudad_proveedor = ciudad_proveedor;
+	}
+	public int getId_ciudad() {
+		return id_ciudad;
+	}
+	public void setId_ciudad(int id_ciudad) {
+		this.id_ciudad = id_ciudad;
 	}
 	
 	

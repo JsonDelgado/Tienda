@@ -9,6 +9,8 @@ private String email_usuario;
 private String nombre_usuario;
 private String password;
 private String usuarios;
+private int id_ciudad;
+
 public int getCedula_usuario() {
 	return cedula_usuario;
 }
@@ -39,6 +41,13 @@ public String getUsuarios() {
 public void setUsuarios(String usuarios) {
 	this.usuarios = usuarios;
 }
+public int getId_ciudad() {
+	return id_ciudad;
+}
+public void setId_ciudad(int id_ciudad) {
+	this.id_ciudad = id_ciudad;
+}
+
 
 
 

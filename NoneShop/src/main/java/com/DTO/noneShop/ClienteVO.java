@@ -7,7 +7,7 @@ public class ClienteVO {
 	private String emailClient;
 	private String nombreClient;
 	private String telefonoClient;
-	
+	private int id_ciudad;
 	
 
 
@@ -49,6 +49,12 @@ public class ClienteVO {
 	}
 	public void setTelefonoClient(String telefonoClient) {
 		this.telefonoClient = telefonoClient;
+	}
+	public int getId_ciudad() {
+		return id_ciudad;
+	}
+	public void setId_ciudad(int id_ciudad) {
+		this.id_ciudad = id_ciudad;
 	}
 	
 	
