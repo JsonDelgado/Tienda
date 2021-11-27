@@ -147,13 +147,19 @@ ul.tabs li a .tab-text{
 }
 
 .labelP{
-	margin-left: 133px;
+	margin-left: 65px;
 }
 
+.labelP2{
+	margin-left: 85px;
+}
 .labelcP{
 	margin-left: 20px;
 }
 
+.labelcP2{
+	margin-left: 100px;
+}
 .labelvT{
 	margin-left: 30px;
 }

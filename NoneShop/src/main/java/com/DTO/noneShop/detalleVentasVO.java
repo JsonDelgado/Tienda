@@ -2,15 +2,17 @@ package com.DTO.noneShop;
 
 public class detalleVentasVO {
 
-	private static final long serialVersionUID = -7823811509082856845L;
+
 	
-	int codigoDetalle;
+	int codigoDetalle=1;
 	int cantidadProducto;
-	int codigoVenta;
+	int codigoVenta = 1;
 	double valorTotal;
 	double valorVenta;
 	double valorIVA;
 	int codigoProducto;
+	int id_ciudad;
+	
 	
 	
 	public int getCodigoDetalle() {
@@ -54,6 +56,12 @@ public class detalleVentasVO {
 	}
 	public void setCodigoProducto(int codigoProducto) {
 		this.codigoProducto = codigoProducto;
+	}
+	public int getId_ciudad() {
+		return id_ciudad;
+	}
+	public void setId_ciudad(int id_ciudad) {
+		this.id_ciudad = id_ciudad;
 	}
 	
 	

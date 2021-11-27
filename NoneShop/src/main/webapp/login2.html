@@ -12,6 +12,7 @@
 <script src="moduloCliente.js"></script>
 <script src="moduloProveedor.js"></script>
 <script src="productos.js"></script>
+<script src="detalleVentas.js"></script>
 </head>
 <body>
 
@@ -78,14 +79,7 @@
 							
 							
 							</div>		
-							
-							<div class = "form_group">
-								
-								<input  id="id_ciudad" type="text" class ="form_input" placeholder=" " value="">
-								<label  for="name" class = "form_label">Código Ciudad:</label>
-								<span class="form_line"></span>
-							
-							</div>																			
+																									
 							
 						</div>
 						
@@ -223,53 +217,75 @@
 				
 				<div class="labelProducto">				
 				<label for="name">Cod. Producto</label>
-				<label for="name" class="labelP">Nombre Producto</label>
+				<label for="name" class="labelP">Cod. Venta</label>
 				<label for="name" class="labelcP">Cantidad</label>
 				<label for="name" class="labelvT">Vlr. Total</label>
 				</div>
 				
 				<div class="campo1Ventas">
-				<input  id="codP1" type="text" class = "form_inputV" placeholder=" " value="">
-				<input type ="button"  value="Consultar" id = "buttonCod1" >
-				<input  id="nomP1" type="text" class = "form_inputV" placeholder=" " value="">
-				<input  id="cantP1" type="text" class = "form_cantP" placeholder=" " value="">
-				<input  id="valorP1" type="text" class = "form_inputV" placeholder=" " value="">
+				<input  id="codP1" type="text" class = "form_inputV" placeholder=" " value="">		
+				<input  id="cVenta" type="text" class = "form_inputV" placeholder=" " value="">
+				<input  id="caProducto" type="text" class = "form_cantP" placeholder=" " value="">
+				<input  id="vTotal" type="text" class = "form_inputV" placeholder=" " value="">
 
 				</div>
+
+				<div class="labelProducto">
+
+				<label for="name"> Total Venta</label>
+				<label for="name" class="labelP2">Total IVA</label>			
+				<label for="name" class="labelcP2">Total con IVA</label>
+				<label for="name" class="labelcP2">Ciudad</label>
+				
+				</div>
+				
 				<div class="campo2Ventas">
-				<input  id="codP2" type="text" class = "form_inputV" placeholder=" " value="">
-				<input type ="button"  value="Consultar" id = "buttonCod2" >
-				<input  id="nomP2" type="text" class = "form_inputV" placeholder=" " value="">
-				<input  id="cantP2" type="text" class = "form_cantP" placeholder=" " value="">
-				<input  id="valorP2" type="text" class = "form_inputV" placeholder=" " value="">
-				</div>
+				<input  id="tVenta" type="text" class = "form_inputV" placeholder=" " value="">
+				<input  id="tIva" type="text" class = "form_inputV" placeholder=" " value="">
+				<input  id="tcIva" type="text" class = "form_inputV" placeholder=" " value="">
 				
-				<div class="campo3Ventas">
-				<input  id="codP3" type="text" class = "form_inputV" placeholder=" " value="">
-				<input type ="button"  value="Consultar" id = "buttonCod3" >
-				<input  id="nomP3" type="text" class = "form_inputV" placeholder=" " value="">
-				<input  id="cantP3" type="text" class = "form_cantP" placeholder=" " value="">
-				<input  id="valorP3" type="text" class = "form_inputV" placeholder=" " value="">
+				<select name="OS" class="labelP2">
+   <option value="0">Cúcuta</option> 
+   <option value="5">Antioquia</option> 
+   <option value="8">Atlantico</option>
+   <option value="11">Bogotá D.C.</option> 
+   <option value="13">Bolivar</option> 
+   <option value="15">Boyaca</option> 
+   <option value="17">Caldas</option> 
+   <option value="18">Caqueta</option> 
+   <option value="19">Cauca</option> 
+   <option value="20">Cesar</option> 
+   <option value="23">Córdoba</option> 
+   <option value="25">Cundinamarca</option> 
+   <option value="27">Choco</option> 
+   <option value="41">Huila</option> 
+   <option value="44">La Guajira</option> 
+   <option value="47">Magdalena</option> 
+   <option value="50">Meta</option> 
+   <option value="52">Nariño</option> 
+   <option value="54">Norte de Santander</option> 
+   <option value="63">Quindio</option> 
+   <option value="66">Risaralda</option> 
+   <option value="68">Santander</option> 
+   <option value="70">Sucre</option> 
+   <option value="73">Tolima</option> 
+   <option value="76">Valle del Cauca</option> 
+   <option value="81">Arauca</option> 
+   <option value="85">Casanare</option> 
+   <option value="86">Putumayo</option> 
+   <option value="88">Archipielago</option> 
+   <option value="91">Amazonas</option> 
+   <option value="94">Guainia</option> 
+   <option value="95">Guaviare</option> 
+   <option value="97">Vaupes</option> 
+   <option value="99">Vichada</option> 
+   
+</select>
 				
-				</div>
-				<div class="valor">
-				<div class="valorpT">
-				<label for="name" class="labelT">Total Venta</label>
-				<input  id="valorP4" type="text" class = "form_inputV" placeholder=" " value="">
-				</div>
-				
-				<div class="valorpT2">
-				<label for="name" class="labelT">Total IVA</label>
-				<input  id="valorP5" type="text" class = "form_inputV" placeholder=" " value="">
-				</div>
-				<div class="valorpT3">
-				<label for="name" class="labelT">Total con IVA</label>
-				<input  id="valorP6" type="text" class = "form_inputV" placeholder=" " value="">
-				</div>
 				</div>
 							
-				<input type ="button" class="form_submitT" value="Confirmar" id = "Pendiente Funcion"><!-- Pendiente funcion para llamar los datos -->
 				
+				<input type ="reset" class="form_submitT" value="Confirmar" id = "agregarDV">
 			</form>
 			
 			</article>

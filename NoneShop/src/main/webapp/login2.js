@@ -28,7 +28,7 @@ $('ul.tabs li a').click(function(){
 	document.getElementById("emailUsuario").value="";
 	document.getElementById("usuarios").value="";
 	document.getElementById("password").value="";
-	document.getElementById("id_ciudad").value="";
+
 
 	
 	document.getElementById("cedulaCliente").value="";
@@ -68,7 +68,7 @@ $('.form_submitT').click(function(){
                 if(status=="success"){
                     let longitud = data.length;
                     let salida ="<table border='1'>";
-                    salida = salida + "<tr><th align=left>Cedula</th><th align=left>Nombre</th>  <th align=left>Email</th> <th align=left>Usuario</th>  <th align=left>Contrasena</th> <th align=left>Ciudad</th></tr>";
+                    salida = salida + "<tr><th align=left>Cedula</th><th align=left>Nombre</th>  <th align=left>Email</th> <th align=left>Usuario</th>  <th align=left>Contrasena</th></tr>";
 
                     for(let i=0;i<longitud;i++){
                         salida = salida + "<tr>";
@@ -78,7 +78,6 @@ $('.form_submitT').click(function(){
                         salida = salida + "<td align=left>"+data[i].email_usuario+"</td>";
 						salida = salida + "<td align=left>"+data[i].usuarios+"</td>";
 						salida = salida + "<td align=left>"+data[i].password+"</td>";
-						salida = salida + "<td align=left>"+data[i].id_ciudad+"</td>";
                         salida = salida + "</tr>";
                     }
                     salida = salida +"</table>";
@@ -129,11 +128,9 @@ $("#agregarU").click(function(){
             let nombreUsuario = $("#nombreUsuario").val();
             let emailUsuario = $("#emailUsuario").val();
 			let usuarios = $("#usuarios").val();
-			let password = $("#password").val();
-			let id_ciudad =$("#id_ciudad").val();
+			let password = $("#password").val();			
            
-            $.post("http://localhost:8080/crearusuario",{cedulaUsuario: cedulaUsuario, nombreUsuario: nombreUsuario, emailUsuario: emailUsuario, usuarios: usuarios, password: password, id_ciudad: id_ciudad},function(data,status){
-					alert(cedulaUsuario);
+            $.post("http://localhost:8080/crearusuario",{cedulaUsuario: cedulaUsuario, nombreUsuario: nombreUsuario, emailUsuario: emailUsuario, usuarios: usuarios, password: password},function(data,status){
                 if (data==true){
                     alert("Usuario creado");
 													
