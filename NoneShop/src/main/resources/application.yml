@@ -1,0 +1,18 @@
+server:
+  port: 9000
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: jsonplaceholder
+        uri: https://jsonplaceholder.typicode.com
+        predicates:
+        - Patch=/listausuarios/**
+      - id: reqres
+        uri: https://reqres.in
+        predicates:
+        - Patch=/api/
+      - id: httpbin
+        uri: https://httpbin.org
+        predicates:
+        - Path=/listausuarios/**
